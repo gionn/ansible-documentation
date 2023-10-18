@@ -208,42 +208,42 @@ Use the following example as a guide for specifying roles in *requirements.yml*:
     - name: yatesr.timezone
 
     # from locally cloned git repository (git+file:// requires full paths)
-    - src: git+file:///home/bennojoy/nginx
+    - source: git+file:///home/bennojoy/nginx
 
     # from GitHub
-    - src: https://github.com/bennojoy/nginx
+    - source: https://github.com/bennojoy/nginx
 
     # from GitHub, overriding the name and specifying a specific tag
     - name: nginx_role
-      src: https://github.com/bennojoy/nginx
+      source: https://github.com/bennojoy/nginx
       version: main
 
     # from GitHub, specifying a specific commit hash
-    - src: https://github.com/bennojoy/nginx
+    - source: https://github.com/bennojoy/nginx
       version: "ee8aa41"
 
     # from a webserver, where the role is packaged in a tar.gz
     - name: http-role-gz
-      src: https://some.webserver.example.com/files/main.tar.gz
+      source: https://some.webserver.example.com/files/main.tar.gz
 
     # from a webserver, where the role is packaged in a tar.bz2
     - name: http-role-bz2
-      src: https://some.webserver.example.com/files/main.tar.bz2
+      source: https://some.webserver.example.com/files/main.tar.bz2
 
     # from a webserver, where the role is packaged in a tar.xz (Python 3.x only)
     - name: http-role-xz
-      src: https://some.webserver.example.com/files/main.tar.xz
+      source: https://some.webserver.example.com/files/main.tar.xz
 
     # from Bitbucket
-    - src: git+https://bitbucket.org/willthames/git-ansible-galaxy
+    - source: git+https://bitbucket.org/willthames/git-ansible-galaxy
       version: v1.4
 
     # from Bitbucket, alternative syntax and caveats
-    - src: https://bitbucket.org/willthames/hg-ansible-galaxy
+    - source: https://bitbucket.org/willthames/hg-ansible-galaxy
       scm: hg
 
     # from GitLab or other git-based scm, using git+ssh
-    - src: git@gitlab.company.com:mygroup/ansible-core.git
+    - source: git@gitlab.company.com:mygroup/ansible-core.git
       scm: git
       version: "0.1"  # quoted, so YAML doesn't parse this as a floating-point value
 
@@ -282,10 +282,10 @@ Below are the contents of the :file:`webserver.yml` file:
 .. code-block:: bash
 
     # from github
-    - src: https://github.com/bennojoy/nginx
+    - source: https://github.com/bennojoy/nginx
 
     # from Bitbucket
-    - src: git+https://bitbucket.org/willthames/git-ansible-galaxy
+    - source: git+https://bitbucket.org/willthames/git-ansible-galaxy
       version: v1.4
 
 The following shows the contents of the :file:`requirements.yml` file that now includes the :file:`webserver.yml` file:
@@ -387,7 +387,7 @@ Alternately, you can specify the role dependencies in the complex form used in  
     dependencies:
       - name: geerlingguy.ansible
       - name: composer
-        src: git+https://github.com/geerlingguy/ansible-role-composer.git
+        source: git+https://github.com/geerlingguy/ansible-role-composer.git
         version: 775396299f2da1f519f0d8885022ca2d6ee80ee8
 
 .. note::
